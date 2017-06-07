@@ -9,8 +9,9 @@
 <html>
 <head>
     <title>Profile</title>
+    <%@include file="partials/bootstrap.jsp"%>
 </head>
 <body>
-
+    <%@include file="partials/navbar.jsp"%>
 </body>
 </html>

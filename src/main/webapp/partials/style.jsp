@@ -7,5 +7,5 @@
 --%>
 <%@ page contentType="text/css;charset=UTF-8" language="java" %>
 body {
-    background-color: greenyellow;
+    background-color: rgba(254, 255, 183, 0.16);
 }
