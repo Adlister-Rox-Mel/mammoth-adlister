@@ -8,13 +8,14 @@ import java.io.IOException;
 /**
  * Created by roxana on 6/8/17.
  */
-@WebServlet(name = "LogoutServlet")
+@WebServlet(name = "LogoutServlet", urlPatterns = "/logout")
 public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.sendRedirect("/login");
+        request.getSession().invalidate();
     }
 }
