@@ -11,28 +11,19 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        if (request.getMethod().equalsIgnoreCase("post")) {
-//            String username = request.getParameter("username");
-//            String password = request.getParameter("password");
-//            if (username.equals("admin") && password.equals("password")) {
-//                response.sendRedirect("/profile.jsp");
-//            }
-//        }
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
-        if (username.equals("admin") && password.equals("password")) {
-            response.sendRedirect("/profile.jsp");
-
-//            request.getRequestDispatcher("/profile.jsp").forward(request, response);
-
+        if ("admin".equals(username) && "password".equals(password)) {
+            response.sendRedirect("/profile");
+            return;
         } else {
             request.setAttribute("username", username);
             request.setAttribute("password", password);
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 }

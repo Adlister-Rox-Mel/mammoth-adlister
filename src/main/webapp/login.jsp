@@ -18,7 +18,7 @@
     <jsp:include page="partials/navbar.jsp" />
     <div class="container">
         <h1>Please Log In</h1>
-        <form action="login.jsp" method="POST">
+        <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
@@ -30,8 +30,8 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
 
-        <h1>${param.username}</h1>
-        <h1>${param.password}</h1>
+        <h1>${username}</h1>
+        <h1>${password}</h1>
     </div>
 </body>
 </html>
