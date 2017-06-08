@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Created by roxana on 6/7/17.
  */
-@WebServlet(name = "LoginServlet", urlPatterns = "/login.jsp")
+@WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        if (request.getMethod().equalsIgnoreCase("post")) {
