@@ -29,6 +29,9 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
+
+        <h1>${param.username}</h1>
+        <h1>${param.password}</h1>
     </div>
 </body>
 </html>
