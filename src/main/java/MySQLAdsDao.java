@@ -30,7 +30,12 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public Long insert(Ad ad) {
+    public Long insert(Ad ad) throws SQLException {
+        try {
+            return insertAds(connection, ad);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
@@ -51,10 +56,11 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
-    private void insertAds(Connection connection, String title, String description, int user_id) throws SQLException {
+    private long insertAds(Connection connection, Ad ad) throws SQLException {
         Statement stmt = connection.createStatement();
         String query = "INSERT INTO ads(title, description, user_id) VALUES";
-        query += "(" + title + ", " + description + ", " + user_id +")";
+        query += "('" + ad.getTitle() + "', '" + ad.getDescription() + "', '" + ad.getUserId() +"')";
         stmt.execute(query);
+        return ad.getId();
     }
 }
