@@ -50,4 +50,11 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    private void insertAds(Connection connection, String title, String description, int user_id) throws SQLException {
+        Statement stmt = connection.createStatement();
+        String query = "INSERT INTO ads(title, description, user_id) VALUES";
+        query += "(" + title + ", " + description + ", " + user_id +")";
+        stmt.execute(query);
+    }
 }
