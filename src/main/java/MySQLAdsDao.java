@@ -1,15 +1,17 @@
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.mysql.cj.jdbc.Driver;
 
 /**
  * Created by roxana on 6/9/17.
  */
 public class MySQLAdsDao implements Ads {
-    private Connection connection;
 
-    public MySQLAdsDao() throws SQLException {
-        Config config = new Config();
+    private Connection connection = null;
+
+    public MySQLAdsDao(Config config) throws SQLException {
+        DriverManager.registerDriver(new Driver());
         connection = DriverManager.getConnection(
                 config.getUrl(),
                 config.getUsername(),
