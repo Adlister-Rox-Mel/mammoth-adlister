@@ -19,3 +19,6 @@ CREATE TABLE ads (
   title VARCHAR(255) NOT NULL,
   description TEXT
 );
+
+INSERT into users(username, password, email)
+VALUES ('user1', '123', 'user1@gmail.com');
