@@ -60,7 +60,8 @@ public class MySQLAdsDao implements Ads {
         Statement stmt = connection.createStatement();
         String query = "INSERT INTO ads(title, description, user_id) VALUES";
         query += "('" + ad.getTitle() + "', '" + ad.getDescription() + "', '" + ad.getUserId() +"')";
-        stmt.execute(query);
-        return ad.getId();
+        stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+        ResultSet rs = stmt.getGeneratedKeys();
+        return rs.getLong(1);
     }
 }
