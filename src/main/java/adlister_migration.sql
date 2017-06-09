@@ -22,3 +22,6 @@ CREATE TABLE ads (
 
 INSERT into users(username, password, email)
 VALUES ('user1', '123', 'user1@gmail.com');
+
+INSERT into ads(title, description, user_id)
+    VALUES ('playstation for sale','This is a slightly used playstation', '1');
