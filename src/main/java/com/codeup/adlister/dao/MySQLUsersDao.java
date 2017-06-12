@@ -28,12 +28,15 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findByUsername(String username) {
+        //Using prepared statements to avoid problems with user input going into the database (SQL injection)
         User user = null;
-        Statement statement = null;
-        String select = String.format("Select * from users where username ='%s'", username);
+        PreparedStatement statement = null;
+//        String select = String.format("Select * from users where username ='%s'", username);
+        String select = "SELECT * FROM users WHERE username=?";
         try {
-            statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(select);
+            statement = connection.prepareStatement(select);
+            statement.setString(1, username);
+            ResultSet rs = statement.executeQuery();
             rs.next();
             user = new User(
                     rs.getLong("id"),
