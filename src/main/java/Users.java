@@ -9,5 +9,5 @@ public interface Users {
     public List<User> all() throws SQLException;
 
     // insert a new user and return the user's id
-    public long insert(User user);
+    public long insert(User user) throws SQLException;
 }
