@@ -30,8 +30,7 @@ public class RegisterServlet extends HttpServlet {
 
 
         // TODO: if a user was successfully created, send them to their profile
-        request.getSession().setAttribute("user_id", user_id);
-        request.getSession().setAttribute("user", user.getUsername());
+        request.getSession().setAttribute("user", user);
         response.sendRedirect("/profile");
     }
 }

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import com.codeup.adlister.models.*;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -18,9 +19,10 @@ public class CreateAdServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        long user_id = 1;
-        if (request.getSession().getAttribute("user_id") != null) {
-            user_id = (long) request.getSession().getAttribute("user_id");
+        User user = (User) request.getSession().getAttribute("user");
+        long user_id = 0;
+        if (user != null) {
+            user_id = user.getId();
         }
         Ad ad = new Ad(
             user_id,
