@@ -72,6 +72,6 @@ public class MySQLUsersDao implements Users {
             e.printStackTrace();
         }
 
-        return null;
+        return id;
     }
 }

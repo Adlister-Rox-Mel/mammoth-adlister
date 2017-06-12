@@ -26,10 +26,11 @@ public class RegisterServlet extends HttpServlet {
                 request.getParameter("email"),
                 request.getParameter("password")
         );
-        DaoFactory.getUsersDao().insert(user);
+        long user_id = DaoFactory.getUsersDao().insert(user);
 
 
         // TODO: if a user was successfully created, send them to their profile
+        request.getSession().setAttribute("user_id", user_id);
         request.getSession().setAttribute("user", user.getUsername());
         response.sendRedirect("/profile");
     }
