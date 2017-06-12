@@ -15,7 +15,8 @@ public class JDBCExample {
                 config.getPassword()
         );
 //        insertAds(connection);
-        selectAds(connection);
+//        selectAds(connection);
+        selectUserId(connection, "rox");
     }
 
     public static void insertAds(Connection connection) throws SQLException {
@@ -37,10 +38,10 @@ public class JDBCExample {
         // move the cursor through the results
         // this while loop will run once for each row in the results
         while (rs.next()) {
-            int user_id = rs.getInt("user_id");
+//            int user_id = rs.getInt("user_id");
             String title = rs.getString("title");
             String description = rs.getString("description");
-            Ad ad = new Ad(user_id, title, description);
+            Ad ad = new Ad(title, description);
             ads.add(ad);
 
             System.out.println("----------------------------------------");
@@ -48,5 +49,12 @@ public class JDBCExample {
             System.out.println("description: " + description);
         }
         return ads;
+    }
+
+    public static void selectUserId(Connection connection, String username) throws SQLException {
+//        String query = "SELECT id FROM users WHERE username = '" + username + "'";
+//        Statement statement = connection.createStatement();
+//        ResultSet rs = statement.executeQuery(query);
+//        System.out.println(rs.getInt(1));
     }
 }

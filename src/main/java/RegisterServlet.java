@@ -18,7 +18,9 @@ public class RegisterServlet extends HttpServlet {
                 request.getParameter("email")
                 );
         try {
-            DaoFactory.getUsersDao().insert(user);
+
+            long user_id = DaoFactory.getUsersDao().insert(user);
+            request.getSession().setAttribute("user_id", user_id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
