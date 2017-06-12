@@ -58,7 +58,7 @@ public class MySQLUsersDao implements Users {
         long id = -1;
 
         try {
-            statement = connection.prepareStatement(insert);
+            statement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
             statement.setLong(1, user.getId());
             statement.setString(2, user.getUsername());
             statement.setString(3, user.getPassword());
