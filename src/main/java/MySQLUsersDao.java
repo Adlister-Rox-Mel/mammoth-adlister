@@ -53,12 +53,13 @@ public class MySQLUsersDao implements Users{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return -1;
     }
 
     private long insertUser(User user, Connection connection) throws SQLException {
         Statement statement = connection.createStatement();
         String query = "INSERT INTO users(username, password, email)" +
-                "VALUES (" + user.getUsername() + "," + user.getPassword() + "," + user.getEmail() + ")";
+                "VALUES ('" + user.getUsername() + "', '" + user.getPassword() + "', '" + user.getEmail() + "')";
         statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
         ResultSet resultSet = statement.getGeneratedKeys();
         return resultSet.getLong(1);

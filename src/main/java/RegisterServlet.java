@@ -14,7 +14,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User(
                 request.getParameter("username"),
-                request.getParameter("username"),
+                request.getParameter("password"),
                 request.getParameter("email")
                 );
         try {
