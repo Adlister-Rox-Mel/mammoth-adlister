@@ -4,6 +4,7 @@ import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
+import com.codeup.adlister.*;
 
 public class MySQLUsersDao implements Users {
     private Connection connection;
@@ -13,7 +14,7 @@ public class MySQLUsersDao implements Users {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
                 config.getUrl(),
-                config.getUser(),
+                config.getUsername(),
                 config.getPassword()
             );
         } catch (SQLException e) {
