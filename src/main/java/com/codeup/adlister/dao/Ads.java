@@ -16,4 +16,7 @@ public interface Ads {
 
     //find Ads that their titles contain the String search
     List<Ad> findAdsByTitle(String search);
+
+    //find Ads by user id
+    List<Ad> findAdsByUserId(long user_id);
 }
