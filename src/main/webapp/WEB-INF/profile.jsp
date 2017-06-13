@@ -11,6 +11,16 @@
 
     <div class="container">
         <h1>Welcome, <c:out value="${sessionScope.user.getUsername()}"/>!</h1>
+        <div class="list-group">
+            <h3 class="list-group-item active">
+                Here are yours ads!
+            </h3>
+            <c:forEach var="ad" items="${myAds}">
+                <a href="/ads/show?ad_id=${ad.id}">
+                    <h3><c:out value="${ad.title}"/></h3>
+                </a>
+            </c:forEach>
+        </div>
     </div>
 
 </body>

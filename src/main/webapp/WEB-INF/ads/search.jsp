@@ -25,7 +25,6 @@
                     <h3><c:out value="${searchedAd.title}"/></h3>
                 </a>
             </c:forEach>
-
         </div>
     </div>
 </body>
