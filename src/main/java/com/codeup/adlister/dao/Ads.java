@@ -13,4 +13,7 @@ public interface Ads {
 
     //get ad given the id
     Ad getAd(long id);
+
+    //find Ads that their titles contain the String search
+    List<Ad> findAdsByTitle(String search);
 }
