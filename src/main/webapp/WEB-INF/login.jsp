@@ -14,12 +14,35 @@
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
+            <c:if test="${invalidUsername}">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Invalid username! </strong> Please enter your username again.
+                </div>
+            </c:if>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
+            <c:if test="${invalidPassword}">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Invalid password! </strong> Please enter your password again.
+                </div>
+            </c:if>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(".close").click(function () {
+            $(this).parent().fadeOut();
+        });
+    </script>
 </body>
 </html>

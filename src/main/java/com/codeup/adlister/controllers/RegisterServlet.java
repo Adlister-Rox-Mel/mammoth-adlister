@@ -46,6 +46,8 @@ public class RegisterServlet extends HttpServlet {
         boolean usernameExists = user != null;
 
         if (inputHasErrors || usernameExists) {
+            User invalidUser = new User(username, email, password);
+            request.getSession().setAttribute("invalidUser", invalidUser);
             request.getSession().setAttribute("inputIsEmpty", inputIsEmpty);
             request.getSession().setAttribute("passwordMatch", passwordMatch);
             request.getSession().setAttribute("usernameExists", usernameExists);

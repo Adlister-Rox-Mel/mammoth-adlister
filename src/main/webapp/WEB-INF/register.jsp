@@ -19,17 +19,17 @@
         <form action="/register" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text">
+                <input id="username" name="username" class="form-control" type="text" value="${invalidUser.username}">
             </div>
             <c:if test="${usernameExists}">
                 <div class="alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong>Username exists! </strong> Choose a different username and try submitting again.
+                    <strong>Username already exists! </strong> Choose a different username and try submitting again.
                 </div>
             </c:if>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" name="email" class="form-control" type="text">
+                <input id="email" name="email" class="form-control" type="text" value="${invalidUser.email}">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
@@ -38,7 +38,7 @@
             <c:if test="${!passwordMatch}">
                 <div class="alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong>Passwords don't match! </strong> Check your password and try submitting again.
+                    <strong>Password doesn't match! </strong> Please enter your password and try submitting again.
                 </div>
             </c:if>
             <div class="form-group">
