@@ -21,7 +21,9 @@
                 Here are the ads!
             </h3>
             <c:forEach var="searchedAd" items="${searchedAds}">
-                <a href="#"><h3>${searchedAd.title}</h3></a>
+                <a href="#">
+                    <h3><c:out value="${searchedAd.title}"/></h3>
+                </a>
             </c:forEach>
 
         </div>

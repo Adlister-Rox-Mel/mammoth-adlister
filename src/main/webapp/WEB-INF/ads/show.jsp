@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: roxana
@@ -16,9 +17,11 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>;
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading">${ad.title}</div>
+        <div class="panel-heading">
+            <c:out value="${ad.title}"/>
+        </div>
         <div class="panel-body">
-            ${ad.description}
+            <c:out value="${ad.description}"/>
         </div>
         <table class="table">
             <tr>
@@ -27,9 +30,9 @@
                 <th>Email</th>
             </tr>
             <tr>
-                <td>${user.id}</td>
-                <td>${user.username}</td>
-                <td>${user.email}</td>
+                <td><c:out value="${user.id}"/></td>
+                <td><c:out value="${user.username}"/></td>
+                <td><c:out value="${user.email}"/></td>
             </tr>
         </table>
     </div>
