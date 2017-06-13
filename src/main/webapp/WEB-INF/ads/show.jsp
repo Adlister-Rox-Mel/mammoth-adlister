@@ -27,9 +27,9 @@
                 <th>Email</th>
             </tr>
             <tr>
-                <td>${user.getUserId()}</td>
-                <td>${user.getUserName()}</td>
-                <td>${user.getUserEmail()}</td>
+                <td>${user.id}</td>
+                <td>${user.username}</td>
+                <td>${user.email}</td>
             </tr>
         </table>
     </div>
