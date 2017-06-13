@@ -16,10 +16,9 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>;
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading">Panel heading without title</div>
+        <div class="panel-heading">${ad.title}</div>
         <div class="panel-body">
-            Panel content
-            ${ad_id}
+            ${ad.description}
         </div>
         <table class="table">
             <tr>

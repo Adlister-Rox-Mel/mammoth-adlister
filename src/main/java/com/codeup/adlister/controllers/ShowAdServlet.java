@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.*;
+
 /**
  * Created by roxana on 6/12/17.
  */
@@ -18,7 +21,8 @@ public class ShowAdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         long ad_id = Long.parseLong(request.getParameter("ad_id"));
-        request.getSession().setAttribute("ad_id", ad_id);
+        Ad ad = DaoFactory.getAdsDao().getAd(ad_id);
+        request.getSession().setAttribute("ad", ad);
         request.getRequestDispatcher("/WEB-INF/ads/show.jsp").forward(request, response);
     }
 }

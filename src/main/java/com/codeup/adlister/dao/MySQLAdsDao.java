@@ -56,6 +56,21 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public Ad getAd(long id) {
+        Ad ad = null;
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM ads WHERE id=" + id;
+            ResultSet rs = statement.executeQuery(query);
+            rs.next();
+            ad = extractAd(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ad;
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -72,4 +87,6 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+
 }
