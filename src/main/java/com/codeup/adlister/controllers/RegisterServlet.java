@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import com.codeup.adlister.util.*;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
@@ -29,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
             || password.isEmpty()
             || (! password.equals(passwordConfirmation));
 
-        boolean usernameUnique = user.getUsername() == null;
+        boolean usernameUnique = user == null;
 
         if (inputHasErrors || !usernameUnique) {
             response.sendRedirect("/register");
@@ -37,6 +38,7 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // create and save a new user
+        password = Password.hash(password);
         user = new User(username, email, password);
         DaoFactory.getUsersDao().insert(user);
         request.getSession().setAttribute("user", user);
