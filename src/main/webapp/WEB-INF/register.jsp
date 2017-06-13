@@ -15,6 +15,12 @@
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
+            <c:if test="${usernameExists}">
+                <div class="username-alert alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Username exists! </strong> Choose a different username and try submitting again.
+                </div>
+            </c:if>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input id="email" name="email" class="form-control" type="text">
@@ -24,7 +30,7 @@
                 <input id="password" name="password" class="form-control" type="password">
             </div>
             <c:if test="${!passwordMatch}">
-                <div class="password-sms alert alert-danger alert-dismissible" role="alert">
+                <div class="password-alert alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <strong>Passwords don't match! </strong> Check your password and try submitting again.
                 </div>
@@ -44,7 +50,7 @@
      </script>
     <script>
         $(".close").click(function () {
-            $(".password-sms").fadeOut();
+            $(".password-alert").fadeOut();
             console.log("test");
         });
     </script>

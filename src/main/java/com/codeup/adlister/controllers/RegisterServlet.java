@@ -17,6 +17,10 @@ public class RegisterServlet extends HttpServlet {
         if(request.getSession().getAttribute("passwordMatch") == null ) {
             request.getSession().setAttribute("passwordMatch", true);
         }
+
+        if(request.getSession().getAttribute("usernameExists") == null) {
+            request.getSession().setAttribute("usernameExists", false);
+        }
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
@@ -35,10 +39,11 @@ public class RegisterServlet extends HttpServlet {
             || !passwordMatch;
 
 
-        boolean usernameUnique = user == null;
+        boolean usernameExists = user != null;
 
-        if (inputHasErrors || !usernameUnique) {
+        if (inputHasErrors || usernameExists) {
             request.getSession().setAttribute("passwordMatch", passwordMatch);
+            request.getSession().setAttribute("usernameExists", usernameExists);
             response.sendRedirect("/register");
             return;
         }
