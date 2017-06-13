@@ -19,6 +19,7 @@
         <div class="panel-heading">Panel heading without title</div>
         <div class="panel-body">
             Panel content
+            ${ad_id}
         </div>
         <table class="table">
             <tr>

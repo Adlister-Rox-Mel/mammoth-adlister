@@ -17,6 +17,8 @@ public class ShowAdServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        long ad_id = Long.parseLong(request.getParameter("ad_id"));
+        request.getSession().setAttribute("ad_id", ad_id);
         request.getRequestDispatcher("/WEB-INF/ads/show.jsp").forward(request, response);
     }
 }
