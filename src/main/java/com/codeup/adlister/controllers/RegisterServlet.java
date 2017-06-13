@@ -21,6 +21,10 @@ public class RegisterServlet extends HttpServlet {
         if(request.getSession().getAttribute("usernameExists") == null) {
             request.getSession().setAttribute("usernameExists", false);
         }
+
+        if(request.getSession().getAttribute("inputIsEmpty") == null) {
+            request.getSession().setAttribute("inputIsEmpty", false);
+        }
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
@@ -33,15 +37,16 @@ public class RegisterServlet extends HttpServlet {
 
         // validate input
         boolean passwordMatch = password.equals(passwordConfirmation);
-        boolean inputHasErrors = username.isEmpty()
-            || email.isEmpty()
-            || password.isEmpty()
-            || !passwordMatch;
+        boolean inputIsEmpty = username.isEmpty()
+                || email.isEmpty()
+                || password.isEmpty();
+        boolean inputHasErrors = inputIsEmpty || !passwordMatch;
 
 
         boolean usernameExists = user != null;
 
         if (inputHasErrors || usernameExists) {
+            request.getSession().setAttribute("inputIsEmpty", inputIsEmpty);
             request.getSession().setAttribute("passwordMatch", passwordMatch);
             request.getSession().setAttribute("usernameExists", usernameExists);
             response.sendRedirect("/register");
