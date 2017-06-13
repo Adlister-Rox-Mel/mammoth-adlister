@@ -14,6 +14,9 @@ import com.codeup.adlister.util.*;
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getSession().getAttribute("passwordMatch") == null ) {
+            request.getSession().setAttribute("passwordMatch", true);
+        }
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
@@ -25,14 +28,17 @@ public class RegisterServlet extends HttpServlet {
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
         // validate input
+        boolean passwordMatch = password.equals(passwordConfirmation);
         boolean inputHasErrors = username.isEmpty()
             || email.isEmpty()
             || password.isEmpty()
-            || (! password.equals(passwordConfirmation));
+            || !passwordMatch;
+
 
         boolean usernameUnique = user == null;
 
         if (inputHasErrors || !usernameUnique) {
+            request.getSession().setAttribute("passwordMatch", passwordMatch);
             response.sendRedirect("/register");
             return;
         }
