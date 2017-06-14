@@ -20,6 +20,12 @@
                     <h3><c:out value="${ad.title}"/></h3>
                 </a>
 
+                <div id="editButton" type="submit" class="btn btn-danger">
+                    <a  href="/ads/edit?ad_id=${ad.id}">
+                        <h4 id="#edit">Edit/Delete Ad</h4>
+                    </a>
+                </div>
+
 
                     <div id="deleteButton" type="submit" class="btn btn-danger">
                         <a  href="/delete?ad_id=${ad.id}">
