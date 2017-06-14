@@ -87,7 +87,7 @@ public class MySQLAdsDao extends MySQLDao implements Ads {
             String query = "DELETE FROM ads WHERE id=" + id;
             statement.executeUpdate(query);
         } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving an Ad.", e);
+            throw new RuntimeException("Error deleting an Ad.", e);
         }
     }
 

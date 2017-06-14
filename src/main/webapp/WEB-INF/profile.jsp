@@ -20,12 +20,13 @@
                     <h3><c:out value="${ad.title}"/></h3>
                 </a>
 
-                <form action="/delete" method="POST">
-                    <div type="submit" class="btn btn-primary btn-block">
-                        <a href="/delete/ad_id=${ad.id}">
-                            <h3>Delete Ad</h3>
-                    </div>
-                </form>
+
+                    <div id="deleteButton" type="submit" class="btn btn-danger">
+                        <a  href="/delete?ad_id=${ad.id}">
+                            <h4 id="#delete">Delete Ad</h4>
+                        </a>
+                        </div>
+
             </c:forEach>
         </div>
     </div>
