@@ -14,7 +14,7 @@ import java.io.IOException;
  * Created by melodytempleton on 6/14/17.
  */
 
-@WebServlet(name="controllers/EditAdServlet", urlPatterns = "/ads/edit")
+@WebServlet(name="EditAdServlet", urlPatterns = "/ads/edit")
 public class EditAdServlet extends HttpServlet {
 
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
