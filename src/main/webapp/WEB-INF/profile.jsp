@@ -19,6 +19,10 @@
                 <a href="/ads/show?ad_id=${ad.id}">
                     <h3><c:out value="${ad.title}"/></h3>
                 </a>
+
+                <form action="/delete" method="POST">
+                    <input type="submit" class="btn btn-primary btn-block" value="Delete">
+                </form>
             </c:forEach>
         </div>
     </div>
