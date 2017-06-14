@@ -14,20 +14,25 @@
         <c:choose>
             <c:when test="${user == null}">
             <div id="nav-signin-register" class="nav navbar-nav navbar-right">
-                <span>Hi! <a href="/login">Sing in</a> or <a href="/register">Register</a></span>
+                <span>Hi! <a href="/login">Sign in</a> or <a href="/register">Register</a></span>
             </div>
             </c:when>
             <c:otherwise>
-                <div id="nav-signin-register" class="nav navbar-nav navbar-right">
-                    <span>Hi ${user.username}!</span>
+                <div id="nav-signin-register" class="dropdown nav navbar-nav navbar-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Hi ${user.username}! <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My Ads</a></li>
+                        <li><a href="#">Create Ad</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Log out</a></li>
+                    </ul>
                 </div>
             </c:otherwise>
         </c:choose>
-        <%--<ul class="nav navbar-nav navbar-right">--%>
-            <%--<li><a href="/register">Register</a></li>--%>
-            <%--<li><a href="/login">Login</a></li>--%>
-            <%--<li><a href="/logout">Logout</a></li>--%>
-        <%--</ul>--%>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+
+
+
