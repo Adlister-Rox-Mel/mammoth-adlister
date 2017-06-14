@@ -10,3 +10,7 @@
 #nav-signin-register {
     margin: 15px;
 }
+
+body {
+    background-color: greenyellow;
+}
