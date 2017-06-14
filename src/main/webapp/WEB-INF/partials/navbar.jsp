@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,11 +11,14 @@
             </div>
             <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
         </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </ul>
+        <div id="nav-signin-register" class="nav navbar-nav navbar-right">
+            <span>Hi! <a href="/login">Sing in</a> or <a href="/register">Register</a></span>
+        </div>
+        <%--<ul class="nav navbar-nav navbar-right">--%>
+            <%--<li><a href="/register">Register</a></li>--%>
+            <%--<li><a href="/login">Login</a></li>--%>
+            <%--<li><a href="/logout">Logout</a></li>--%>
+        <%--</ul>--%>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
