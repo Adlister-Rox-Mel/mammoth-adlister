@@ -21,4 +21,6 @@ public interface Ads {
     List<Ad> findByUserId(long user_id);
 
     void deleteAd(long id);
+
+    void update(long id, String title, String desc);
 }
