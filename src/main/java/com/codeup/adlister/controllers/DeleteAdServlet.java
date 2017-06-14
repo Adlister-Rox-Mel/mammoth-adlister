@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class DeleteAdServlet extends HttpServlet {
 
-   private void doPost(HttpServletRequest request, HttpServletResponse response) {
-
-
-
-   }
+//   private void doPost(HttpServletRequest request, HttpServletResponse response) {
+//
+//
+//
+//   }
 }
