@@ -21,7 +21,10 @@
                 </a>
 
                 <form action="/delete" method="POST">
-                    <input type="submit" class="btn btn-primary btn-block" value="Delete">
+                    <div type="submit" class="btn btn-primary btn-block">
+                        <a href="/delete/ad_id=${ad.id}">
+                            <h3>Delete Ad</h3>
+                    </div>
                 </form>
             </c:forEach>
         </div>
