@@ -27,14 +27,23 @@ public class EditAdServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String ad_title = request.getParameter("ad_title");
-        String ad_description = request.getParameter("ad_description");
+        long id = (long) request.getSession().getAttribute("user_id");
         long ad_id = Long.parseLong(request.getParameter("ad_id"));
-        DaoFactory.getAdsDao().update(ad_id, ad_title, ad_description);
-        Ad ad = DaoFactory.getAdsDao().findById(ad_id);
-        request.getSession().setAttribute("ad", ad);
-        request.getRequestDispatcher("/WEB-INF/ads/show.jsp").forward(request, response);
+        long user_id_from_ad = DaoFactory.getAdsDao().findById(ad_id).getUserId();
+        if(id == user_id_from_ad ) {
 
+            String ad_title = request.getParameter("ad_title");
+            String ad_description = request.getParameter("ad_description");
 
+            DaoFactory.getAdsDao().update(ad_id, ad_title, ad_description);
+            Ad ad = DaoFactory.getAdsDao().findById(ad_id);
+            request.getSession().setAttribute("ad", ad);
+            request.getRequestDispatcher("/WEB-INF/ads/show.jsp").forward(request, response);
+
+        }
+
+        else {
+            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        }
     }
 }

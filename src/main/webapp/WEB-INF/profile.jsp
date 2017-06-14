@@ -9,6 +9,7 @@
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+
     <div class="container">
         <h1>Welcome, <c:out value="${sessionScope.user.getUsername()}"/>!</h1>
         <div class="panel panel-primary">
