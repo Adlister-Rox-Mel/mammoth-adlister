@@ -37,5 +37,6 @@
         </table>
     </div>
 </div>
+<jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 </body>
 </html>

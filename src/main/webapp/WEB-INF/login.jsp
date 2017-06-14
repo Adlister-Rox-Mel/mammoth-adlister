@@ -34,16 +34,6 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
-
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous">
-    </script>
-    <script>
-        $(".close").click(function () {
-            $(this).parent().fadeOut();
-        });
-    </script>
+    <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 </body>
 </html>
