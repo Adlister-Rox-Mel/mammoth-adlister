@@ -25,18 +25,18 @@
 }
 
 #deleteButton {
-    height: 3vw;
-    width: 6vw;
-    color: white;
+    /*height: 3vw;*/
+    /*width: 6vw;*/
+    /*color: white;*/
 }
 
 #deleteButton a {
     text-decoration: none;
 }
 
-#delete {
-    color: white!important;
-}
+/*#delete {*/
+    /*color: white;*/
+/*}*/
 
 
 
