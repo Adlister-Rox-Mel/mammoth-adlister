@@ -1,31 +1,17 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
-import com.mysql.cj.jdbc.Driver;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import com.codeup.adlister.*;
 
-public class MySQLAdsDao implements Ads {
-    private Connection connection = null;
+public class MySQLAdsDao extends MySQLDao implements Ads {
 
     public MySQLAdsDao(Config config) {
-        try {
-            DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUsername(),
-                config.getPassword()
-            );
-        } catch (SQLException e) {
-            throw new RuntimeException("Error connecting to the database!", e);
-        }
+        super(config);
     }
+
 
     @Override
     public List<Ad> all() {
@@ -57,7 +43,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public Ad getAd(long id) {
+    public Ad findById(long id) {
         try {
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM ads WHERE id=" + id;
@@ -70,7 +56,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> findAdsByTitle(String search) {
+    public List<Ad> findByTitle(String search) {
         String query = "SELECT * FROM ads WHERE title LIKE ?";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
@@ -83,7 +69,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> findAdsByUserId(long user_id) {
+    public List<Ad> findByUserId(long user_id) {
         String query = "SELECT * FROM ads WHERE user_id = ?";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
@@ -110,6 +96,4 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
-
-
 }

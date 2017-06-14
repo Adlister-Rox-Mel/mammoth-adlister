@@ -18,7 +18,7 @@ import com.codeup.adlister.models.*;
 public class SearchAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String search = request.getParameter("search");
-        List<Ad> ads = DaoFactory.getAdsDao().findAdsByTitle(search);
+        List<Ad> ads = DaoFactory.getAdsDao().findByTitle(search);
         request.getSession().setAttribute("searchedAds", ads);
         request.getRequestDispatcher("/WEB-INF/ads/search.jsp").forward(request, response);
     }

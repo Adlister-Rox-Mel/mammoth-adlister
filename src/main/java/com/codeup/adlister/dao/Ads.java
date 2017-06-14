@@ -12,11 +12,11 @@ public interface Ads {
     Long insert(Ad ad);
 
     //get ad given the id
-    Ad getAd(long id);
+    Ad findById(long id);
 
     //find Ads that their titles contain the String search
-    List<Ad> findAdsByTitle(String search);
+    List<Ad> findByTitle(String search);
 
     //find Ads by user id
-    List<Ad> findAdsByUserId(long user_id);
+    List<Ad> findByUserId(long user_id);
 }
