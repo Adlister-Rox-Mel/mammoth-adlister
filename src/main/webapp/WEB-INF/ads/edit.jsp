@@ -20,10 +20,10 @@
     <form action="/ads/edit" method="post">
 <div class="panel panel-default">
     <div class="panel-heading">
-     <input name="ad_title" type="text" size="100" value=<c:out value="${ad.title}"/>>
-    </div>
+     <input name="ad_title" type="text" size="100" value="<c:out value="${ad.title}"/>">
+</div>
     <div class="panel-body">
-        <input name="ad_description" type="text"  size="300" value=  <c:out value="${ad.description}"/>>
+        <input name="ad_description" type="text"  size="300" value= "<c:out value="${ad.description}"/>">
     </div>
 </div>
         <input type="hidden" name="ad_id" value="<c:out value="${ad.id}"/>">
