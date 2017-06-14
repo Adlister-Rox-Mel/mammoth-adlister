@@ -22,10 +22,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Hi ${user.username}! <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">My Ads</a></li>
-                        <li><a href="#">Create Ad</a></li>
+                        <li><a href="/profile">My Ads</a></li>
+                        <li><a href="/ads/create">Create Ad</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Log out</a></li>
+                        <li><a href="/logout">Log out</a></li>
                     </ul>
                 </div>
             </c:otherwise>
