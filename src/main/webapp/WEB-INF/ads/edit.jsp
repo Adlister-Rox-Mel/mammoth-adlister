@@ -39,10 +39,10 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-8">
-                        <input  type="text" size="50" value="<c:out value="${ad.title}"/>">
+                        <input  name="ad_title" type="text" size="50" value="<c:out value="${ad.title}"/>">
                     </div>
                     <div id="price" class="col-xs-4">
-                        <input type="text" value="<c:out value="$${ad.price}"/>">
+                        <input name="ad_price" type="text" value="<c:out value="$${ad.price}"/>">
                     </div>
 
                 </div>
@@ -55,14 +55,14 @@
                     </div>
                     <div class="col-xs-1"></div>
                     <div class="col-xs-4">
-                       <textarea rows="10" cols="55" id="editDesc"> <c:out value="${ad.description}"/></textarea>
+                       <textarea name="ad_description" rows="10" cols="55" id="editDesc"> <c:out value="${ad.description}"/></textarea>
                     </div>
                     <div class="col-xs-1"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="well well-sm" style="margin-bottom: 0"><strong>Category:</strong> <input id="editCategory" type="text" size="65" value="<c:out value="${ad.category}"/>"></div>
+                    <div class="well well-sm" style="margin-bottom: 0"><strong>Category:</strong> <input name="ad_category" id="editCategory" type="text" size="65" value="<c:out value="${ad.category}"/>"></div>
                 </div>
             </div>
             <div class="row info">
@@ -78,16 +78,7 @@
                 </div>
             </div>
         </form>
-
-
-            <%--<div id="deleteButton" type="submit" class="btn btn-danger">--%>
-                <%--<a  id="#delete" href="/delete?ad_id=${ad.id}">--%>
-                    <%--<h4 style="color: white">Delete Ad</h4>--%>
-                <%--</a>--%>
-            <%--</div>--%>
-
     </div> <!-- end panel -->
-
 </div>
 
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
