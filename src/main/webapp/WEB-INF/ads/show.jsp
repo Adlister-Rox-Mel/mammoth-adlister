@@ -23,6 +23,10 @@
         <div class="panel-body">
             <c:out value="${ad.description}"/>
         </div>
+        <div class="panel-body">
+            <c:out value="${ad.price}"/>
+        </div>
+        <img src="../../img/${ad.url}">
         <table class="table">
             <tr>
                 <th>User Id</th>
