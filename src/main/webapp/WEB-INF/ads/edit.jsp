@@ -18,9 +18,6 @@
             text-align: end;
         }
 
-        #editDesc {
-            width: 30em;
-        }
 
         #deleteButton {
             margin-top: 10em;
@@ -59,7 +56,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-xs-8">
-                    <input  type="text" value="<c:out value="${ad.title}"/>">
+                    <input  type="text" size="50" value="<c:out value="${ad.title}"/>">
                 </div>
                 <div id="price" class="col-xs-4">
                     <input type="text" value="<c:out value="$${ad.price}"/>">
@@ -75,9 +72,14 @@
                 </div>
                 <div class="col-xs-1"></div>
                 <div class="col-xs-4">
-                    <input id="editDesc" type="text" size="500" value="<c:out value="${ad.description}"/>">
+                   <textarea rows="10" cols="55" id="editDesc"> <c:out value="${ad.description}"/></textarea>
                 </div>
                 <div class="col-xs-1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="well well-sm" style="margin-bottom: 0"><strong>Category:</strong> <input id="editCategory" type="text" size="65" value="<c:out value="${ad.category}"/>"></div>
             </div>
         </div>
         <input type="hidden" name="ad_id" value="<c:out value="${ad.id}"/>">
