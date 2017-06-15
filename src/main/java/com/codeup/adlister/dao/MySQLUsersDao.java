@@ -23,12 +23,13 @@ public class MySQLUsersDao extends MySQLDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
+        String query = "INSERT INTO users(username, email, password, phone) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
+            stmt.setString(4, user.getPhone());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -47,7 +48,7 @@ public class MySQLUsersDao extends MySQLDao implements Users {
             return extractUser(statement.executeQuery());
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error finding a user by id", e);
+            throw new RuntimeException("Error finding an user by id", e);
         }
 
     }
@@ -60,7 +61,8 @@ public class MySQLUsersDao extends MySQLDao implements Users {
             rs.getLong("id"),
             rs.getString("username"),
             rs.getString("email"),
-            rs.getString("password")
+            rs.getString("password"),
+            rs.getString("phone")
         );
     }
 
