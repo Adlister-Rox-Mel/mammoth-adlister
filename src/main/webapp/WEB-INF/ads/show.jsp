@@ -92,7 +92,7 @@
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 <script>
     var phone =  $('#hidePhone').val();
-    console.log(phone);
+
     $('.btn-info').click(function () {
         if(phone!=""){
             $(this).html("${user.phone}");
