@@ -9,16 +9,20 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <h1>Here Are all the ads!</h1>
-
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <a href="/ads/show?ad_id=${ad.id}">
-                <h2><c:out value="${ad.title}"/></h2>
-            </a>
-            <p><c:out value="${ad.description}"/></p>
+    <h1 style="text-align: center">WELCOME!</h1>
+        <div class="row">
+            <c:forEach var="ad" items="${ads}">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="../../img/${ad.url}" style="width: 250px; height: 250px">
+                        <div class="caption">
+                            <h4>${ad.title}</h4>
+                            <p><a href="/ads/show?ad_id=${ad.id}" class="btn btn-primary btn-block" role="button">Go</a></p>
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
-    </c:forEach>
 </div>
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 </body>
