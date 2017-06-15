@@ -5,25 +5,40 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Edit Ad" />
     </jsp:include>
+    <style>
+        #imgs {
+            width: 100%;
+        }
+
+        .info {
+            padding-bottom: 15px;
+        }
+
+        #price {
+            text-align: end;
+        }
+
+        #editDesc {
+            width: 30em;
+        }
+
+        #deleteButton {
+            margin-top: 10em;
+            float: right;
+            margin-right: 35vw
+        }
+
+        #updateButton {
+            float: right;
+            margin-right: 36vw
+        }
+
+
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-
-    <form action="/ads/edit" method="post">
-        <div class="panel panel-primary">
-            <div class="panel-heading">TITLE</div>
-            <div class="panel-body">
-                <input class="col-sm-12" type="text" value="<c:out value="${ad.title}"/>">
-            </div>
-        </div> <!-- end title panel -->
-
-        <div class="panel panel-primary">
-            <div class="panel-heading">DESCRIPTION</div>
-            <div class="panel-body">
-                <input class="col-sm-12" type="text" value="<c:out value="${ad.description}"/>">
-            </div>
-        </div> <!-- end description panel -->
 
 
         <%--<div class="panel panel-primary">--%>
@@ -34,18 +49,53 @@
                 <%--<input name="ad_description" type="text"  size="300" value= "<c:out value="${ad.description}"/>">--%>
             <%--</div>--%>
         <%--</div>--%>
+
+
+
+
+    <form action="/ads/edit" method="post">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-8">
+                    <input  type="text" value="<c:out value="${ad.title}"/>">
+                </div>
+                <div id="price" class="col-xs-4">
+                    <input type="text" value="<c:out value="$${ad.price}"/>">
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-5">
+                    <img id="imgs" src="../../img/${ad.url}">
+                </div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-4">
+                    <input id="editDesc" type="text" size="500" value="<c:out value="${ad.description}"/>">
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+        </div>
         <input type="hidden" name="ad_id" value="<c:out value="${ad.id}"/>">
-        <input type="submit" class="btn btn-primary btn-block" value="Update Ad">
+        <input id="updateButton" type="submit" class="btn btn-info" value="Update Ad">
 
     </form>
 
+        <div class="row info">
+            <div class="col-xs-12">
+                <div id="deleteButton" type="submit" class="btn btn-danger">
+                    <a  id="#delete" href="/delete?ad_id=${ad.id}">
+                        <h4 style="color: white">Delete Ad</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end panel -->
 
-
-<div id="deleteButton" type="submit" class="btn btn-danger btn-block">
-    <a  id="#delete" href="/delete?ad_id=${ad.id}">
-        <h4 style="color: white">Delete Ad</h4>
-    </a>
-</div>
 
 </div>
 

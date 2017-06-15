@@ -19,6 +19,7 @@ CREATE TABLE ads (
     price FLOAT,
     description TEXT,
     url VARCHAR(255),
+    category VARCHAR(255),
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE
