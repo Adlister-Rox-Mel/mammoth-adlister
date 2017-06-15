@@ -42,7 +42,7 @@
                         <input  name="ad_title" type="text" size="50" value="<c:out value="${ad.title}"/>">
                     </div>
                     <div id="price" class="col-xs-4">
-                        <input name="ad_price" type="text" value="<c:out value="$${ad.price}"/>">
+                        <input name="ad_price" type="text" value="<c:out value="${ad.price}"/>">
                     </div>
 
                 </div>
@@ -52,6 +52,10 @@
                     <div class="col-xs-1"></div>
                     <div class="col-xs-5">
                         <img id="imgs" src="../../img/${ad.url}">
+                        <h4>Replace Image</h4>
+                        <input type="hidden" id="url" name="url">
+                        <input id="choose-img" type="file" onchange="imgchange(event)" />
+                        <img id="imgs" />
                     </div>
                     <div class="col-xs-1"></div>
                     <div class="col-xs-4">
@@ -82,5 +86,11 @@
 </div>
 
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
+<script>
+    function imgchange(event){
+        $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
+        $('#url').val(event.target.files[0].name);
+    }
+</script>
 </body>
 </html>
