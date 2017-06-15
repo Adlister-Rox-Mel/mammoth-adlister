@@ -7,22 +7,25 @@ public class Ad {
     private float price;
     private String description;
     private String url;
+    private String category;
 
-    public Ad(long id, long userId, String title, String description, float price, String url) {
+    public Ad(long id, long userId, String title, String description, float price, String url, String category) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
         this.price = price;
         this.url = url;
+        this.category = category;
     }
 
-    public Ad(long userId, String title, String description, float price, String url) {
+    public Ad(long userId, String title, String description, float price, String url, String category) {
         this.userId = userId;
         this.title = title;
         this.description = description;
         this.price = price;
         this.url = url;
+        this.category = category;
     }
 
     public long getId() {
@@ -63,5 +66,9 @@ public class Ad {
 
     public String getUrl() {
         return url;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

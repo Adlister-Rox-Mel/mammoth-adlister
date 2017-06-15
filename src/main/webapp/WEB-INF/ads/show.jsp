@@ -38,7 +38,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-xs-8">
-                    <c:out value="${ad.title}"/>
+                    <strong><c:out value="${ad.title}"/></strong>
                 </div>
                 <div id="price" class="col-xs-4">
                     <c:out value="$${ad.price}"/>
@@ -63,6 +63,11 @@
         <div class="row info">
             <div class="col-xs-12">
                 <button type="button" class="btn btn-info">Show contact info</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="well well-sm" style="margin-bottom: 0"><strong>Category:</strong> <c:out value="${ad.category}"/></div>
             </div>
         </div>
     </div> <!-- end panel -->
