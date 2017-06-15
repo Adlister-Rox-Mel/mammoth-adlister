@@ -32,6 +32,10 @@
                 <input id="email" name="email" class="form-control" type="text" value="${invalidUser.email}">
             </div>
             <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" class="form-control" type="text" value="${invalidUser.phone}">
+            </div>
+            <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
