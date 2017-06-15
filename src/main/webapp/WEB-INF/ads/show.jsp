@@ -61,7 +61,7 @@
         </div>
 
         <div class="row info">
-            < class="col-xs-12">
+            <div class="col-xs-12">
                 <input id="hidePhone" hidden value="<c:out value="${user.phone}"/>">
                 <button type="button" class="btn btn-info">Show contact info</button>
             </div>
