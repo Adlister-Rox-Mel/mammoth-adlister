@@ -36,7 +36,7 @@
             <textarea id="description" name="description" class="form-control" type="text"></textarea>
         </div>
 
-        <input type="hidden" id="ad-img-url" name="ad-img-url">
+        <input type="hidden" id="url" name="url">
         <input id="choose-img" type="file" onchange="imgchange(event)" />
         <img id="imgs" />
 
@@ -52,7 +52,7 @@
 
 function imgchange(event){
     $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
-    $('#ad-img-url').val(URL.createObjectURL(event.target.files[0]));
+    $('#url').val(URL.createObjectURL(event.target.files[0]));
 }
 </script>
 </body>
