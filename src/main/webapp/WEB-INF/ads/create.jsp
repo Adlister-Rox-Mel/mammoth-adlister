@@ -36,7 +36,7 @@
             <textarea id="description" name="description" class="form-control" type="text"></textarea>
         </div>
 
-        <input type="text" id="url" name="url">
+        <input type="hidden" id="url" name="url">
         <input id="choose-img" type="file" onchange="imgchange(event)" />
         <img id="imgs" />
 

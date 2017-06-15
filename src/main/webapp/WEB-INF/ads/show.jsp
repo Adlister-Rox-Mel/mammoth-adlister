@@ -15,7 +15,6 @@
     <style>
         #imgs {
             width: 100%;
-            height: 450px;
         }
 
         .info {
