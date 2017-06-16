@@ -71,27 +71,11 @@
             </div>
         </div>
     </div> <!-- end panel -->
-
-
-
-    <%--<table class="table">--%>
-        <%--<tr>--%>
-            <%--<th>User Id</th>--%>
-            <%--<th>Username</th>--%>
-            <%--<th>Email</th>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td><c:out value="${user.id}"/></td>--%>
-            <%--<td><c:out value="${user.username}"/></td>--%>
-            <%--<td><c:out value="${user.email}"/></td>--%>
-        <%--</tr>--%>
-    <%--</table>--%>
-
 </div>
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 <script>
     $('.btn-info').click(function () {
-        $(this).html("${user.email}");
+        $(this).html("${userFromAd.phone}");
     })
 </script>
 </body>
