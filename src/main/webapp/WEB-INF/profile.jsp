@@ -15,6 +15,11 @@
         .jumbotron {
             display: flex;
             justify-content: space-around;
+            background-color: #ebf4f9;
+        }
+
+        .well {
+            background-color: white;
         }
     </style>
 </head>
@@ -35,8 +40,8 @@
                 </div>
             </div>
         </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading" style="text-align: center; font-size:30px;">My ads!</div>
+        <div class="panel panel-default">
+            <div class="panel-heading" style="text-align:center; font-size:30px; color:#337ab7;">My ads!</div>
             <div class="panel-body">
             <table class="table table-striped">
                 <c:forEach var="ad" items="${myAds}">
