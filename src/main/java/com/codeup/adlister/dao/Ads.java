@@ -22,5 +22,5 @@ public interface Ads {
 
     void deleteAd(long id);
 
-    void update(long id, String title, String desc, Float price, String url, String category);
+    void update(Ad ad);
 }

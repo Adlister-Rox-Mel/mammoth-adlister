@@ -14,7 +14,8 @@
     </jsp:include>
     <style>
         #imgs {
-            width: 100%;
+            max-width:450px;
+            max-height:400px;
         }
 
         .info {
@@ -50,11 +51,11 @@
             <div class="row">
                 <div class="col-xs-1"></div>
                 <div class="col-xs-5">
-                    <img id="imgs" src="../../img/${ad.url}">
+                    <img id="imgs" class="img-responsive" src="../../img/${ad.url}">
                 </div>
                 <div class="col-xs-1"></div>
                 <div class="col-xs-4">
-                    <p><c:out value="${ad.description}"/></p>
+                    <p style="text-align: justify"><c:out value="${ad.description}"/></p>
                 </div>
                 <div class="col-xs-1"></div>
             </div>
@@ -62,7 +63,6 @@
 
         <div class="row info">
             <div class="col-xs-12">
-                <input id="hidePhone" hidden value="<c:out value="${user.phone}"/>">
                 <button type="button" class="btn btn-info">Show contact info</button>
             </div>
         </div>
@@ -72,33 +72,11 @@
             </div>
         </div>
     </div> <!-- end panel -->
-
-
-
-    <%--<table class="table">--%>
-        <%--<tr>--%>
-            <%--<th>User Id</th>--%>
-            <%--<th>Username</th>--%>
-            <%--<th>Email</th>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td><c:out value="${user.id}"/></td>--%>
-            <%--<td><c:out value="${user.username}"/></td>--%>
-            <%--<td><c:out value="${user.email}"/></td>--%>
-        <%--</tr>--%>
-    <%--</table>--%>
-
 </div>
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 <script>
-    var phone =  $('#hidePhone').val();
-
     $('.btn-info').click(function () {
-        if(phone!=""){
-            $(this).html("${user.phone}");
-        }
-        else {
-            $(this).html("${user.email}");}
+        $(this).html("${userFromAd.phone}");
     })
 </script>
 </body>

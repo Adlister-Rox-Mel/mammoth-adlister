@@ -6,22 +6,25 @@ public class User {
     private String email;
     private String password;
     private String phone;
+    private String url;
 
     public User() {}
 
-    public User(String username, String email, String password, String phone) {
+    public User(String username, String email, String password, String phone, String url) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.phone = phone;
+        this.url = url;
     }
 
-    public User(long id, String username, String email, String password, String phone) {
+    public User(long id, String username, String email, String password, String phone, String url) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.phone = phone;
+        this.url = url;
     }
 
     public long getId() {
@@ -58,5 +61,9 @@ public class User {
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getUrl() {
+        return url;
     }
 }

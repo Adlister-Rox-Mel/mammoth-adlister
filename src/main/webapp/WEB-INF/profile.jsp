@@ -5,15 +5,38 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
+    <style>
+        #user-img {
+            width: 100px;
+            height: 100px;
+            margin-left: 10%;
+        }
+
+        .jumbotron {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 
     <div class="container">
-        <h1>Welcome, <c:out value="${sessionScope.user.getUsername()}"/>!</h1>
+        <div class="jumbotron">
+            <h1>Welcome, <c:out value="${sessionScope.user.getUsername()}"/>!</h1>
+            <img src="../../img/${user.url}" id="user-img">
+            <div>
+                <div class="well well-sm">
+                    <strong>P: </strong><c:out value="${user.phone}"/>
+                </div>
+                <div class="well well-sm">
+                    <strong>E: </strong><c:out value="${user.email}"/>
+                </div>
+            </div>
+        </div>
         <div class="panel panel-primary">
-            <div class="panel-heading"><h3>Here are yours ads!</h3></div>
+            <div class="panel-heading" style="text-align: center; font-size:30px;">My ads!</div>
             <div class="panel-body">
             <table class="table table-striped">
                 <c:forEach var="ad" items="${myAds}">
@@ -25,13 +48,6 @@
                             <a href="/ads/edit?ad_id=${ad.id}" role="button" class="glyphicon glyphicon-pencil ads-edit"></a>
                         </td>
                     </tr>
-
-                    <%--<div id="deleteButton" type="submit" class="btn btn-danger">--%>
-                        <%--<a  href="/delete?ad_id=${ad.id}">--%>
-                            <%--<h4 id="#delete">Delete Ad</h4>--%>
-                        <%--</a>--%>
-                    <%--</div>--%>
-
                 </c:forEach>
             </table>
             </div>

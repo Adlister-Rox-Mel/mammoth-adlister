@@ -24,7 +24,7 @@ public class ShowAdServlet extends HttpServlet {
         Ad ad = DaoFactory.getAdsDao().findById(ad_id);
         User user = DaoFactory.getUsersDao().findById(ad.getUserId());
         request.getSession().setAttribute("ad", ad);
-        request.getSession().setAttribute("user", user);
+        request.getSession().setAttribute("userFromAd", user);
         request.getRequestDispatcher("/WEB-INF/ads/show.jsp").forward(request, response);
     }
 }

@@ -9,6 +9,7 @@ CREATE TABLE users (
     email VARCHAR(240) NOT NULL,
     phone VARCHAR(20),
     password VARCHAR(255) NOT NULL,
+    url VARCHAR(255),
     PRIMARY KEY (id)
 );
 
