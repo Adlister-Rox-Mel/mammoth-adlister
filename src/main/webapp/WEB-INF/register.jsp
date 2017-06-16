@@ -21,6 +21,19 @@
             text-align: center;
             margin-bottom: 20px;
         }
+
+        #choose-img {
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        #imgs {
+            height: 125px;
+            border: 1px solid black;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -38,6 +51,11 @@
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text" value="${invalidUser.username}">
             </div>
+
+            <input type="hidden" id="url" name="url">
+            <input id="choose-img" type="file" onchange="imgchange(event)" />
+            <img id="imgs" />
+
             <c:if test="${usernameExists}">
                 <div class="alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -66,7 +84,6 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
-            <input type="hidden" id="url" name="url" value="user1.png">
             <input type="submit" class="btn btn-default btn-block">
         </form>
     </div>
