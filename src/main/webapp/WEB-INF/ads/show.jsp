@@ -63,6 +63,7 @@
 
         <div class="row info">
             <div class="col-xs-12">
+                <input id="hidePhone" hidden value="<c:out value="${userFromAd.phone}"/>">
                 <button type="button" class="btn btn-info">Show contact info</button>
             </div>
         </div>
@@ -75,9 +76,15 @@
 </div>
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 <script>
+    var phone =  $('#hidePhone').val();
+
     $('.btn-info').click(function () {
-        $(this).html("${userFromAd.phone}");
-    })
+        if(phone!=""){
+            $(this).html("${userFromAd.phone}");
+        }
+        else {
+            $(this).html("${userFromAd.email}");}
+    });
 </script>
 </body>
 </html>
