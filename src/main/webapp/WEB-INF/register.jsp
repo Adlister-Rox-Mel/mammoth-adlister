@@ -88,5 +88,11 @@
         </form>
     </div>
     <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
+    <script>
+        function imgchange(event){
+            $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
+            $('#url').val(event.target.files[0].name);
+        }
+    </script>
 </body>
 </html>
