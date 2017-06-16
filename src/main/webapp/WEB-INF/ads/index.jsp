@@ -16,7 +16,7 @@
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../img/${ad.url}" style="max-width:250px; height:200px">
                         <div class="caption">
-                            <h4 style="padding-left:3px">${ad.title}</h4>
+                            <h4 style="text-align:center">${ad.title}</h4>
                             <p><a href="/ads/show?ad_id=${ad.id}" class="btn btn-primary btn-block" role="button">Go</a></p>
                         </div>
                     </div>

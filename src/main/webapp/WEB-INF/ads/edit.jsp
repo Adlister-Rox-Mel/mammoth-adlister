@@ -29,6 +29,13 @@
             margin-bottom: 0;
         }
 
+        .menu {
+            font-size: 15px;
+            padding-bottom: 0;
+            padding-top: 0;
+            background-color: whitesmoke;
+        }
+
 
     </style>
 </head>
@@ -43,7 +50,7 @@
                         <input  name="ad_title" type="text" size="50" value="<c:out value="${ad.title}"/>">
                     </div>
                     <div id="price" class="col-xs-4">
-                        <input name="ad_price" type="text" value="<c:out value="${ad.price}"/>">
+                        <input name="ad_price" type="text" value="<c:out value="${ad.price}"/>" style="text-align:right">
                     </div>
 
                 </div>
@@ -58,14 +65,30 @@
                     </div>
                     <div class="col-xs-1"></div>
                     <div class="col-xs-4">
-                       <textarea name="ad_description" rows="10" cols="55" id="editDesc"> <c:out value="${ad.description}"/></textarea>
+                       <textarea name="ad_description" rows="10" cols="55" id="editDesc" style="text-align:justify"> <c:out value="${ad.description}"/></textarea>
                     </div>
                     <div class="col-xs-1"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="well well-sm" style="margin-bottom: 0"><strong>Category:</strong> <input name="ad_category" id="editCategory" type="text" size="65" value="<c:out value="${ad.category}"/>"></div>
+                    <div class="well well-sm" style="margin-bottom: 0"><strong>Category:</strong>
+                        <input id="editCategory" name="ad_category" type="hidden" value="${ad.category}">
+                        <div class="btn-group">
+                            <button type="button" class="menu btn btn-lg dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span> ${ad.category}
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="categ" href="#">Guitar</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a class="categ" href="#">Piano</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a class="categ" href="#">Violin</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a class="categ" href="#">Cello</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row info">
@@ -91,6 +114,18 @@
         $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
         $('#ad_url').val(event.target.files[0].name);
     }
+
+
+    $('.menu').click(function () {
+        $(this).toggleClass('menu-click');
+    });
+
+    $('.categ').click(function (e) {
+        e.preventDefault();
+        var name = ' <span class="caret"></span> ' + $(this).html();
+        $('.menu').html(name);
+        $('#editCategory').val($(this).html());
+    });
 </script>
 </body>
 </html>

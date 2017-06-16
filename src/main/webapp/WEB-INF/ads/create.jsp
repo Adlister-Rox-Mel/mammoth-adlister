@@ -12,14 +12,20 @@
         #imgs {
             height: 125px;
             border: 1px solid black;
-            margin-top: 0px;
+            margin-top: 0;
             margin-bottom: 15px;
             display: none;
         }
 
-        /*#categ {*/
-            /*width: 100%;*/
-        /*}*/
+        .menu {
+            font-size: 15px;
+            padding-bottom: 0;
+            padding-top: 0;
+            border:1px solid #cccccc;
+            text-align: left;
+            margin-bottom: 13px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -38,22 +44,22 @@
         </div>
         <div class="form-group">
             <label for="category">Category</label>
-            <input id="category" name="category" type="text" class="form-control">
-            <%--<!-- Split button -->--%>
-            <%--<div class="btn-group">--%>
-                <%--<button id="categ" type="button" class="btn btn-info">Category</button>--%>
-                <%--<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--%>
-                    <%--<span class="caret"></span>--%>
-                    <%--<span class="sr-only">Toggle Dropdown</span>--%>
-                <%--</button>--%>
-                <%--<ul class="dropdown-menu">--%>
-                    <%--<li class="categ">Furniture</li>--%>
-                    <%--<li class="categ">Cars & Trucks</li>--%>
-                    <%--<li class="categ">Beauty & Health</li>--%>
-                    <%--<li class="categ">Computers</li>--%>
-                    <%--<li class="categ">Cell Phones</li>--%>
-                <%--</ul>--%>
-            <%--</div>--%>
+            <br>
+            <input id="category" name="category" type="hidden">
+            <div class="btn-group" style="display: block">
+                <button type="button" class="menu btn btn-lg dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="categ" href="#">Guitar</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="categ" href="#">Piano</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="categ" href="#">Violin</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="categ" href="#">Cello</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="form-group">
@@ -75,15 +81,21 @@
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 
 <script>
-function imgchange(event){
-    $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
-    $('#url').val(event.target.files[0].name);
+    function imgchange(event){
+        $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
+        $('#url').val(event.target.files[0].name);
+    }
 
-//    $('.categ').click(function () {
-//        $('#category').val($(this).html());
-//        console.log("test");
-//    });
-}
+    $('.menu').click(function () {
+        $(this).toggleClass('menu-click');
+    });
+
+    $('.categ').click(function (e) {
+        e.preventDefault();
+        var name = ' <span class="caret"></span> ' + $(this).html();
+        $('.menu').html(name);
+        $('#category').val($(this).html());
+    });
 </script>
 </body>
 </html>
