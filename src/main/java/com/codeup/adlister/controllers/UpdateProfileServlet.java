@@ -46,7 +46,7 @@ public class UpdateProfileServlet extends HttpServlet {
 
         // create and save a new user
         password = Password.hash(password);
-        user = new User(username, email, password, phone, url);
+        user = new User(id, username, email, password, phone, url);
         DaoFactory.getUsersDao().update(user);
         request.getSession().setAttribute("user", user);
         response.sendRedirect("/profile");
