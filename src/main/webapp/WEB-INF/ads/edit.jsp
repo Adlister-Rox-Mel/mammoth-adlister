@@ -20,6 +20,13 @@
             margin-right: 15px;
             margin-top: 15px;
             margin-bottom: 0;
+            display: none;
+        }
+        #fakeDeleteButton {
+            float: right;
+            margin-right: 15px;
+            margin-top: 15px;
+            margin-bottom: 0;
         }
 
         #updateButton {
@@ -34,6 +41,15 @@
             padding-bottom: 0;
             padding-top: 0;
             background-color: whitesmoke;
+        }
+
+        #warningMessage {
+            display: none;
+            /*float: right;*/
+            /*background-color: orangered;*/
+            /*font-weight: bold;*/
+            /*font-size: 2vw;*/
+            /*color: white;*/
         }
 
 
@@ -87,8 +103,10 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a class="categ" href="#">Cello</a></li>
                             </ul>
+
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="row info">
@@ -99,8 +117,15 @@
                 </div>
 
                 <div class="col-xs-6">
-                    <div id="deleteButton" class="btn btn-danger">
-                        <a id="#delete" href="/delete?ad_id=${ad.id}" style="color: white"> Delete Ad</a>
+                    <div id="warningMessage" class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Do you want to delete this ad? </strong>
+                    </div>
+                    <div id="fakeDeleteButton" class="btn btn-danger"><div id="warning"></div>
+                        <a id="#delete" href="#" style="color: white"> Delete Ad</a>
+                    </div>
+                    <div id="deleteButton" class="btn btn-danger"><div id="warning"></div>
+                        <a id="#delete" href="/delete?ad_id=${ad.id}" style="color: white"> Yes, Delete Ad</a>
                     </div>
                 </div>
             </div>
@@ -110,6 +135,7 @@
 
 <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
 <script>
+
     function imgchange(event){
         $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
         $('#ad_url').val(event.target.files[0].name);
@@ -126,6 +152,16 @@
         $('.menu').html(name);
         $('#editCategory').val($(this).html());
     });
+
+    $('#fakeDeleteButton').click(function () {
+
+        $('#deleteButton').css('display', "inline-block");
+        $('#warningMessage').css('display', 'inline-block');
+        $('#fakeDeleteButton').css('display', 'none');
+
+    });
+
+
 </script>
 </body>
 </html>
