@@ -52,7 +52,7 @@
                 <input id="username" name="username" class="form-control" type="text" value="${invalidUser.username}">
             </div>
 
-            <input type="hidden" id="url" name="url">
+            <input type="hidden" id="url" name="url" value="user2.png">
             <input id="choose-img" type="file" onchange="imgchange(event)" />
             <img id="imgs" />
 
@@ -88,5 +88,11 @@
         </form>
     </div>
     <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
+    <script>
+        function imgchange(event){
+            $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
+            $('#url').val(event.target.files[0].name);
+        }
+    </script>
 </body>
 </html>

@@ -11,6 +11,14 @@
 #nav-signin-register {
     margin: 15px;
 }
+
+.btn-default {
+    background-color: #284967;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+}
+
 /*----------------------------------------------------------------------------------------------------------------------
    Profile
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -24,19 +32,11 @@
     position: relative;
 }
 
-#deleteButton {
-    /*height: 3vw;*/
-    /*width: 6vw;*/
-    /*color: white;*/
-}
-
 #deleteButton a {
     text-decoration: none;
 }
 
-/*#delete {*/
-    /*color: white;*/
-/*}*/
+
 
 
 

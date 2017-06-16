@@ -26,6 +26,22 @@
             margin-bottom: 13px;
             border-radius: 5px;
         }
+
+        .btn-default {
+            background-color: #284967;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        label {
+            font-size: 17px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -67,12 +83,12 @@
             <textarea id="description" name="description" class="form-control" type="text"></textarea>
         </div>
 
-        <input type="hidden" id="url" name="url">
+        <input type="hidden" id="url" name="url" value="empty_img.png">
         <input id="choose-img" type="file" onchange="imgchange(event)" />
         <img id="imgs" />
 
 
-        <input type="submit" class="btn btn-block btn-primary">
+        <input type="submit" class="btn btn-block btn-default">
     </form>
 
 
