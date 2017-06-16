@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/ads">Find your jam</a>
+            <a class="navbar-brand" href="/ads"><strong>Find your jam</strong></a>
         </div>
         <form class="navbar-form navbar-left" role="search" method="post" action="/ads/search">
             <div class="form-group">
