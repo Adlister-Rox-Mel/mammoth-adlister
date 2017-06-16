@@ -21,6 +21,9 @@
         .well {
             background-color: white;
         }
+        strong {
+            color:#284967;
+        }
     </style>
 </head>
 <body>
@@ -29,7 +32,7 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1>Welcome, <c:out value="${sessionScope.user.getUsername()}"/>!</h1>
+            <h1 style="color:#284967">Welcome, <c:out value="${sessionScope.user.getUsername()}"/>!</h1>
             <img src="../../img/${user.url}" id="user-img">
             <div>
                 <div class="well well-sm">
@@ -41,7 +44,7 @@
             </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading" style="text-align:center; font-size:30px; color:#337ab7;">My ads!</div>
+            <div class="panel-heading" style="text-align:center; font-size:30px; color:#ffffff; background-color: #284967">My ads!</div>
             <div class="panel-body">
             <table class="table table-striped">
                 <c:forEach var="ad" items="${myAds}">
