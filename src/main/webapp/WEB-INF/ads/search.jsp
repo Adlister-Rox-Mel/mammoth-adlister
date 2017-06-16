@@ -12,12 +12,18 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Here are the Ads!" />
     </jsp:include>
+    <style>
+    .list-group-item {
+    background-color: #284967;
+    color: #ffffff;
+    }
+    </style>
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
     <div class="container">
         <div class="list-group">
-            <h3 class="list-group-item active">
+            <h3 class="list-group-item">
                 Here are the ads!
             </h3>
             <c:forEach var="searchedAd" items="${searchedAds}">

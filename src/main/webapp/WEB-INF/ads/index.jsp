@@ -5,6 +5,14 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Welcome to Melody Rox site!" />
     </jsp:include>
+    <style>
+        .btn-primary {
+            background-color: #284967;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
