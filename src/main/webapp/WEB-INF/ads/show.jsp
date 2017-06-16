@@ -14,7 +14,8 @@
     </jsp:include>
     <style>
         #imgs {
-            width: 100%;
+            max-width:450px;
+            max-height:400px;
         }
 
         .info {
@@ -50,11 +51,11 @@
             <div class="row">
                 <div class="col-xs-1"></div>
                 <div class="col-xs-5">
-                    <img id="imgs" src="../../img/${ad.url}">
+                    <img id="imgs" class="img-responsive" src="../../img/${ad.url}">
                 </div>
                 <div class="col-xs-1"></div>
                 <div class="col-xs-4">
-                    <p><c:out value="${ad.description}"/></p>
+                    <p style="text-align: justify"><c:out value="${ad.description}"/></p>
                 </div>
                 <div class="col-xs-1"></div>
             </div>

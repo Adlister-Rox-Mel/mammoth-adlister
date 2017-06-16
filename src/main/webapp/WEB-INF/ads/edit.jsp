@@ -7,7 +7,8 @@
     </jsp:include>
     <style>
         #imgs {
-            width: 100%;
+            max-width:450px;
+            max-height:400px;
         }
 
         #price {
@@ -51,7 +52,7 @@
                 <div class="row">
                     <div class="col-xs-1"></div>
                     <div class="col-xs-5">
-                        <img id="imgs" src="../../img/${ad.url}">
+                        <img class="img-responsive" id="imgs" src="../../img/${ad.url}">
                         <input type="hidden" id="ad_url" name="ad_url">
                         <input id="choose-img" class="btn btn-warning" style="background:black; border:white;" value="Replace Image" type="file" onchange="imgchange(event)" />
                     </div>
