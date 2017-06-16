@@ -9,7 +9,7 @@
             <div class="form-group">
                 <input name="search" id="search" type="text" class="form-control" placeholder="Search Ad">
             </div>
-            <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+            <button type="submit" style="background-color: #284967" class="btn btn-default glyphicon glyphicon-search"></button>
         </form>
         <c:choose>
             <c:when test="${user == null}">

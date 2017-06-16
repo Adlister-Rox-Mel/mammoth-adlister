@@ -13,6 +13,14 @@
             font-size: 15px;
         }
 
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 17px;
+        }
     </style>
 </head>
 <body>
