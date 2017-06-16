@@ -14,7 +14,7 @@
             <c:forEach var="ad" items="${ads}">
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
-                        <img src="../../img/${ad.url}" style="width: 250px; height: 250px">
+                        <img src="../../img/${ad.url}" style="width: 250px; height: 200px">
                         <div class="caption">
                             <h4>${ad.title}</h4>
                             <p><a href="/ads/show?ad_id=${ad.id}" class="btn btn-primary btn-block" role="button">Go</a></p>

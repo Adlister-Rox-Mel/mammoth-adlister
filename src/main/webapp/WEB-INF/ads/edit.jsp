@@ -52,10 +52,8 @@
                     <div class="col-xs-1"></div>
                     <div class="col-xs-5">
                         <img id="imgs" src="../../img/${ad.url}">
-                        <h4>Replace Image</h4>
-                        <input type="hidden" id="url" name="url">
-                        <input id="choose-img" type="file" onchange="imgchange(event)" />
-                        <img id="imgs" />
+                        <input type="hidden" id="ad_url" name="ad_url">
+                        <input id="choose-img" class="btn btn-warning" style="background:black; border:white;" value="Replace Image" type="file" onchange="imgchange(event)" />
                     </div>
                     <div class="col-xs-1"></div>
                     <div class="col-xs-4">
@@ -71,6 +69,7 @@
             </div>
             <div class="row info">
                 <div class="col-xs-6">
+                    <input type="hidden" name="user_id" value="<c:out value="${ad.userId}"/>">
                     <input type="hidden" name="ad_id" value="<c:out value="${ad.id}"/>">
                     <input id="updateButton" type="submit" class="btn btn-info" value="Update Ad">
                 </div>
@@ -89,7 +88,7 @@
 <script>
     function imgchange(event){
         $("#imgs").attr('src',URL.createObjectURL(event.target.files[0])).fadeIn();
-        $('#url').val(event.target.files[0].name);
+        $('#ad_url').val(event.target.files[0].name);
     }
 </script>
 </body>
