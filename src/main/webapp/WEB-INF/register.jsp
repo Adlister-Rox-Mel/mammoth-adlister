@@ -5,6 +5,23 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
+    <style>
+        .btn-default {
+            background-color: #284967;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        label {
+            font-size: 17px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />
@@ -50,7 +67,7 @@
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
             <input type="hidden" id="url" name="url" value="user1.png">
-            <input type="submit" class="btn btn-primary btn-block">
+            <input type="submit" class="btn btn-default btn-block">
         </form>
     </div>
     <jsp:include page="/WEB-INF/partials/bottom.jsp"/>
