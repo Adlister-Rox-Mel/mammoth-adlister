@@ -74,6 +74,8 @@
                     <li><a class="categ" href="#">Violin</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="categ" href="#">Cello</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="categ" href="#">Drums</a></li>
                 </ul>
             </div>
         </div>
