@@ -24,6 +24,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="/profile">My Ads</a></li>
                         <li><a href="/ads/create">Create Ad</a></li>
+                        <li><a href="/profile/update">Update Profile</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="/logout">Log out</a></li>
                     </ul>
